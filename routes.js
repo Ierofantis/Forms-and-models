@@ -6,7 +6,8 @@ router.get("/", function(req, res) {
 
   res.render("Regi");
 
-});
+   });
+  
 
 router.post("/", function(req, res) {
 
@@ -14,15 +15,19 @@ router.post("/", function(req, res) {
 
        username: req.body.username,
        email: req.body.email,
-       password: req.body.pass       
+       password: req.body.password       
    };
 
     Reg.create(user, function(err, newUser) {
-      if(err) return next(err);
+      if(err) res.send(err);
      
-      return res.json('newUser');
-
+     Reg.find(function(err, newUser) {
+                if (err)
+                    res.send(err)
+               res.json(newUser);
+     
     });
+});
 });
 
 
