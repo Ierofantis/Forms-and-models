@@ -7,6 +7,12 @@ router.get("/", function(req, res) {
   res.render("Regi");
 
    });
+
+router.get("/login", function(req, res) {
+
+  res.render("Login");
+
+   });
   
 
 router.post("/", function(req, res) {
@@ -27,7 +33,7 @@ router.post("/", function(req, res) {
                res.json(newUser);
      
     });
-});
+  });
 });
 
 

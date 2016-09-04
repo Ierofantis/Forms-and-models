@@ -1,4 +1,13 @@
-var form = angular.module('scotchTodo', []);
+var form = angular.module('form', ["ngRoute"]);	
+
+form.config(function($routeProvider) {
+    $routeProvider
+    .when("/login", {
+        templateUrl : "views/Login.ejs",
+        controller:'mainController';
+    }) 
+    
+});
 
 function mainController($scope, $http) {
 	
