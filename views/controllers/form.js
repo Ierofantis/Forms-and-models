@@ -2,8 +2,8 @@ var form = angular.module('form', ["ngRoute"]);
 
 form.config(function($routeProvider) {
     $routeProvider
-    .when("/login", {
-        templateUrl : "views/Login.ejs",
+    .when("/register", {
+        template : "views/register.html",
         controller:'mainController';
     }) 
     
